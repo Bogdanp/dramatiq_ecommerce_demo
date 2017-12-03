@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-9">
+      <h1 class="display-4">Products</h1>
+
+      <div class="card-deck">
+        {% for product in products %}
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">{{ product.name }} <small class="text-muted">(${{ product.price }})</small></h4>
+              <p class="card-text">{{ product.description }}</p>
+              <a href="#" class="card-link">
+                {% include "_icon.html" with icon="cart" %}
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div clas="col-sm-3">
+      <h1 class="display-4">Cart</h1>
+    </div>
+  </div>
+{% endblock %}
