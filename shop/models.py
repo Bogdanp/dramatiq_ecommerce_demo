@@ -88,3 +88,10 @@ class Sku(models.Model):
 
         self.status = Sku.STATUS_AVAILABLE
         self.save()
+
+    def sell(self):
+        if self.status != Sku.STATUS_RESERVED:
+            raise SkuNotReserved()
+
+        self.status = Sku.STATUS_SOLD
+        self.save()

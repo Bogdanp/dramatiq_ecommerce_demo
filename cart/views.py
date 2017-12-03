@@ -4,7 +4,9 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.http import require_POST
 from shop.models import Product, SkuNotAvailable
 
+from .email import Email
 from .utils import get_current_cart
+from .warehouse import Warehouse
 
 
 @require_POST
@@ -41,5 +43,25 @@ def remove_from_cart(request, sku_id):
     messages.add_message(
         request, messages.INFO,
         "The product has been removed from your cart.",
+    )
+    return redirect("shop:index")
+
+
+@require_POST
+def checkout(request):
+    with transaction.atomic():
+        cart = get_current_cart(request)
+        skus = []
+        for item in cart.items.all():
+            skus.append(item.sku.pk)
+            item.sku.sell()
+            item.delete()
+
+        Warehouse.prepare(*skus)
+        Email.congratulate_on_purchase()
+
+    messages.add_message(
+        request, messages.INFO,
+        "Thank you for your purchase!",
     )
     return redirect("shop:index")
