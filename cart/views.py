@@ -4,9 +4,8 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.http import require_POST
 from shop.models import Product, SkuNotAvailable
 
-from .email import Email
+from . import tasks
 from .utils import get_current_cart
-from .warehouse import Warehouse
 
 
 @require_POST
@@ -57,8 +56,8 @@ def checkout(request):
             item.sku.sell()
             item.delete()
 
-        Warehouse.prepare(*skus)
-        Email.congratulate_on_purchase()
+        tasks.prepare_skus.send(skus)
+        tasks.congratulate_user.send()
 
     messages.add_message(
         request, messages.INFO,

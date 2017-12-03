@@ -90,6 +90,29 @@ DATABASES = {
 }
 
 
+# Task Queue
+# https://github.com/Bogdanp/django_dramatiq/
+
+DRAMATIQ_BROKER = {
+    "BROKER": "dramatiq.brokers.rabbitmq.URLRabbitmqBroker",
+    "OPTIONS": {
+        "url": "amqp://localhost:5672",
+    },
+    "MIDDLEWARE": [
+        "dramatiq.middleware.Prometheus",
+        "dramatiq.middleware.AgeLimit",
+        "dramatiq.middleware.TimeLimit",
+        "dramatiq.middleware.Retries",
+        "django_dramatiq.middleware.AdminMiddleware",
+        "django_dramatiq.middleware.DbConnectionsMiddleware",
+    ]
+}
+
+# Defines which database should be used to persist Task objects when the
+# AdminMiddleware is enabled.  The default value is "default".
+DRAMATIQ_TASKS_DATABASE = "default"
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
