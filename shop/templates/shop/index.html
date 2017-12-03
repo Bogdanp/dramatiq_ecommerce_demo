@@ -4,7 +4,7 @@
 
 {% block content %}
   <div class="row">
-    <div class="col-sm-9">
+    <div class="col-8">
       <h1 class="display-4">Products</h1>
 
       <div class="card-deck">
@@ -13,18 +13,64 @@
             <div class="card-body">
               <h4 class="card-title">{{ product.name }} <small class="text-muted">(${{ product.price }})</small></h4>
               <p class="card-text">{{ product.description }}</p>
-              <a href="#" class="card-link">
-                {% include "_icon.html" with icon="cart" %}
-                Add to Cart
-              </a>
+
+              <form action="{% url "cart:add_to_cart" product.pk %}" method="POST">
+                {% csrf_token %}
+
+                <button type="submit" class="card-link">
+                  {% include "_icon.html" with icon="cart" %}
+                  Add to Cart
+                </button>
+              </form>
             </div>
           </div>
         {% endfor %}
       </div>
     </div>
 
-    <div clas="col-sm-3">
+    <div class="col-4">
       <h1 class="display-4">Cart</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="16px"></th>
+            <th>Product</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if cart_items %}
+            {% for item in cart_items %}
+              <tr>
+                <td>
+                  <form action="{% url "cart:remove_from_cart" item.sku.pk %}" method="POST">
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-sm">
+                      {% include "_icon.html" with icon="trash" %}
+                    </button>
+                  </form>
+                </td>
+                <td>{{ item.sku.product.name }}</td>
+                <td>${{ item.sku.product.price }}</td>
+              </tr>
+            {% endfor %}
+          {% else %}
+            <tr>
+              <td colspan="3">
+                <p class="text-centered">
+                  You don't have any items yet.
+                </p>
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+        <thead>
+          <tr>
+            <th colspan="3">Total ${{ cart_total }}</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
 {% endblock %}

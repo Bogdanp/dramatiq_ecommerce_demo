@@ -24,10 +24,26 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def get_next_available_sku(self):
+        sku = Sku.available_skus.filter(product=self).first()
+        if sku is None:
+            raise SkuNotAvailable()
+        return sku
+
 
 class AvailableSkuManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Sku.STATUS_AVAILABLE)
+
+
+class SkuNotAvailable(Exception):
+    """Raised when a SKU has already been reserved or sold.
+    """
+
+
+class SkuNotReserved(Exception):
+    """Raised when attempting to un-reserve a SKU that isn't currently reserved.
+    """
 
 
 class Sku(models.Model):
@@ -46,6 +62,7 @@ class Sku(models.Model):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
+        related_name="skus",
     )
     status = models.CharField(
         choices=STATUSES,
@@ -57,3 +74,17 @@ class Sku(models.Model):
 
     def __str__(self):
         return f"{self.product.name}@{self.pk}"
+
+    def reserve(self):
+        if self.status != Sku.STATUS_AVAILABLE:
+            raise SkuNotAvailable()
+
+        self.status = Sku.STATUS_RESERVED
+        self.save()
+
+    def unreserve(self):
+        if self.status != Sku.STATUS_RESERVED:
+            raise SkuNotReserved()
+
+        self.status = Sku.STATUS_AVAILABLE
+        self.save()
