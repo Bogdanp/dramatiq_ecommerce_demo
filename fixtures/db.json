@@ -1,0 +1,560 @@
+[
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "django_dramatiq",
+      "model": "task"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "cart",
+      "model": "cart"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "cart",
+      "model": "cartitem"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "shop",
+      "model": "product"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "shop",
+      "model": "sku"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "faannhkicj53jfx9s214y4ngvv4aeexp",
+    "fields": {
+      "session_data": "MjkwZDIzY2JkNjM4NjkyMjk5Y2YyYzllZmQ3ZDM1MGFmYjlmN2U5Yjp7ImNhcnQiOjEsIl9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2N2IyYjU2YjYyMjA3ZjdiOGZhODRhZGI1NmMxMDM5MWViNzY5YTJkIn0=",
+      "expire_date": "2017-12-17T18:08:54.975Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "name": "MacBook Pro",
+      "description": "It’s razor thin, feather light, and even faster and more powerful than before. It has the brightest, most colorful Mac notebook display ever. And it features the Touch Bar — a Multi-Touch enabled strip of glass built into the keyboard for instant access to the tools you want, right when you want them. MacBook Pro is built on groundbreaking ideas. And it’s ready for yours.",
+      "price": "2199.99"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+      "name": "iPhone X",
+      "description": "Our vision has always been to create an iPhone that is entirely screen. One so immersive the device itself disappears into the experience. And so intelligent it can respond to a tap, your voice, and even a glance. With iPhone X, that vision is now a reality. Say hello to the future.",
+      "price": "1099.99"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 3,
+    "fields": {
+      "name": "iMac",
+      "description": "A desktop experience that draws you in and keeps you there. This is the idea behind today’s iMac. And now that idea is more powerful than ever. The new iMac is packed with all-new processors, the latest graphics technologies, innovative storage, and higher-bandwidth connectivity. And it all comes to life on the brightest and most colorful Retina display iMac has ever seen. So you get an even more immersive experience — and a scintillating new way to take it all in.",
+      "price": "2499.99"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 4,
+    "fields": {
+      "name": "iPhone 8",
+      "description": "iPhone 8 introduces an all‑new glass design. The world’s most popular camera, now even better. The most powerful and smartest chip ever in a smartphone. Wireless charging that’s truly effortless. And augmented reality experiences never before possible. iPhone 8. A new generation of iPhone.",
+      "price": "799.99"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 5,
+    "fields": {
+      "name": "iPad Pro",
+      "description": "No matter the task, the new iPad Pro is up to it — and then some. It offers far more power than most PC laptops, yet is delightfully simple to use. The redesigned Retina display is as stunning to look at as it is to touch. And it all comes together with iOS, the world’s most advanced mobile operating system.* iPad Pro. Everything you want modern computing to be. Now even, well, better.",
+      "price": "1499.99"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 4,
+    "fields": {
+      "product": 2,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 6,
+    "fields": {
+      "product": 2,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 7,
+    "fields": {
+      "product": 3,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 8,
+    "fields": {
+      "product": 3,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 9,
+    "fields": {
+      "product": 3,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 10,
+    "fields": {
+      "product": 4,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 11,
+    "fields": {
+      "product": 4,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 12,
+    "fields": {
+      "product": 4,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 13,
+    "fields": {
+      "product": 5,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 14,
+    "fields": {
+      "product": 5,
+      "status": "available"
+    }
+  },
+  {
+    "model": "shop.sku",
+    "pk": 15,
+    "fields": {
+      "product": 5,
+      "status": "available"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can add task",
+      "content_type": 7,
+      "codename": "add_task"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can change task",
+      "content_type": 7,
+      "codename": "change_task"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can delete task",
+      "content_type": 7,
+      "codename": "delete_task"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can add cart",
+      "content_type": 8,
+      "codename": "add_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can change cart",
+      "content_type": 8,
+      "codename": "change_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can delete cart",
+      "content_type": 8,
+      "codename": "delete_cart"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add cart item",
+      "content_type": 9,
+      "codename": "add_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change cart item",
+      "content_type": 9,
+      "codename": "change_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete cart item",
+      "content_type": 9,
+      "codename": "delete_cartitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can add product",
+      "content_type": 10,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can change product",
+      "content_type": 10,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can delete product",
+      "content_type": 10,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can add sku",
+      "content_type": 11,
+      "codename": "add_sku"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can change sku",
+      "content_type": 11,
+      "codename": "change_sku"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can delete sku",
+      "content_type": 11,
+      "codename": "delete_sku"
+    }
+  }
+]
