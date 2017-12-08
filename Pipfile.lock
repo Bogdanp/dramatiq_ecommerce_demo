@@ -43,10 +43,10 @@
         },
         "django-dramatiq": {
             "hashes": [
-                "sha256:69318d12227533fdd3218510a6b7128324e0dbc9d1cd958a4948d693428fa58d",
-                "sha256:b1b1699055597b0ac363110d5f06dfc7082a8b0980ced4d9474d9f212dfe9b2d"
+                "sha256:84a08f5f0bec8dc5cd33cb2db7a68f86e9ce47bc43d158deb4e2360e39e1d60d",
+                "sha256:0f90aa882c51e1c5b35653bb157b27b9df4430a1026b74d14058c4afebaf7f35"
             ],
-            "version": "==0.1.3"
+            "version": "==0.1.4"
         },
         "dramatiq": {
             "hashes": [
